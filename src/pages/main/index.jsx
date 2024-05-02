@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "antd";
 import { Button, Progress } from "antd";
+import { Link } from "react-router-dom";
 
 import Header from "../../layout/header";
 import { getPopularCategories } from "../../services/getPopularCategories";
-import { getDetailsMovie } from "../../services/getDetailsMovie";
+
 import { getAllMovies } from "../../services/getAllMovies";
 
 import "../main/style.scss";
@@ -48,15 +49,6 @@ export default function Index() {
     setShowAll(true);
   };
 
-  const redirectToDetailPage = async (movieId) => {
-    try {
-      const detailPageMovies = await getDetailsMovie(movieId);
-      setSelectedMovie(detailPageMovies);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <div>
       <Header />
@@ -65,33 +57,34 @@ export default function Index() {
         <div className="cards">
           {library.map((movie) => {
             return (
-              <Card
-                style={{ width: "180px", height: "373px" }}
-                hoverable
-                key={movie.id}
-                actions={[
-                  <h3>Puan </h3>,
-                  <Progress
-                    className="progress"
-                    type="circle"
-                    percent={movie.vote_average * 10}
-                    size={30}
-                  />,
-                ]}
-                cover={
-                  <img
-                    className="card-img"
-                    alt=""
-                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              <Link target="blank" to={`/movie/${movie.id}?language=en-US`}>
+                <Card
+                  style={{ width: "180px", height: "373px" }}
+                  hoverable
+                  key={movie.id}
+                  actions={[
+                    <h3>Puan </h3>,
+                    <Progress
+                      className="progress"
+                      type="circle"
+                      percent={movie.vote_average * 10}
+                      size={30}
+                    />,
+                  ]}
+                  cover={
+                    <img
+                      className="card-img"
+                      alt=""
+                      src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    />
+                  }
+                >
+                  <Meta
+                    title={<p>{movie.title}</p>}
+                    description={<p>{movie.release_date}</p>}
                   />
-                }
-                onClick={() => redirectToDetailPage(movie.id)}
-              >
-                <Meta
-                  title={<p>{movie.title}</p>}
-                  description={<p>{movie.release_date}</p>}
-                />
-              </Card>
+                </Card>
+              </Link>
             );
           })}
         </div>

@@ -1,26 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Button, Modal, Progress } from "antd";
-import "../main/style.scss";
 import { Rate } from "antd";
 
-function DetailPage({ movie }) {
+import { getDetailsMovie } from "../../services/getDetailsMovie";
+
+function DetailPage() {
+  const [detailMovie, setDetailMovie] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const fetchMovieDetails = async () => {
+      try {
+        const detailPageMovies = await getDetailsMovie();
+        setDetailMovie(detailPageMovies);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchMovieDetails();
+  }, []);
 
   const handleOk = () => {
     setIsModalOpen(false);
   };
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
 
   const rateMovies = () => {
-    console.log("rate");
     setIsModalOpen(true);
   };
 
   return (
     <div className="detailsPage">
-      <h3 className="detailbaslik">{movie.original_title}</h3>
       <Card
         style={{ width: "300px", height: "373px", margin: "auto" }}
         hoverable
@@ -28,7 +42,7 @@ function DetailPage({ movie }) {
           <img
             className="card-img"
             alt=""
-            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+            src={`https://image.tmdb.org/t/p/w500${detailMovie.poster_path}`}
           />
         }
         actions={[
@@ -36,7 +50,7 @@ function DetailPage({ movie }) {
           <Progress
             className="progress"
             type="circle"
-            percent={movie.vote_average * 10}
+            percent={detailMovie.vote_average * 10}
             size={30}
           />,
           <Button className="detailsButton" onClick={rateMovies}>
@@ -45,8 +59,8 @@ function DetailPage({ movie }) {
         ]}
       >
         <Card.Meta
-          title={<p>{movie.original_title}</p>}
-          description={<p>{movie.overview}</p>}
+          title={<p>{detailMovie.original_title}</p>}
+          description={<p>{detailMovie.overview}</p>}
         />
       </Card>
 
@@ -57,7 +71,7 @@ function DetailPage({ movie }) {
           onOk={handleOk}
           onCancel={handleCancel}
         >
-          <Rate allowHalf defaultValue={2.5} />
+          <Rate defaultValue={2.5} />
         </Modal>
       </div>
     </div>

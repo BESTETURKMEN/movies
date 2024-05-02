@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 
 import Index from "../layout";
 
+import DetailPage from "../pages/main/detailPage";
+
 import Callback from "./auth/Callback";
 import Login from "./auth/Login";
 import Logout from "./auth/Logout";
@@ -28,6 +30,7 @@ export default function RouteWrapper() {
           }
         >
           <Route path="/" element={RenderPage(<Main />)} />
+          <Route path={"/movie"} element={RenderPage(<DetailPage />)} />
         </Route>
         <Route path="*" element={RenderPage(<NotFound />)} />
         <Route path="/logout" element={<Logout />} />
