@@ -1,9 +1,10 @@
 @font-face {
   font-family: "Oswald-VariableFont";
-  src: url("/public/assets/font/Oswald-VariableFont_wght.ttf");
+  src: url("/public/assets/font/Oswald/Oswald-VariableFont_wght.ttf");
 }
 
 $Oswald: "Oswald-VariableFont";
+
 @import "antTheme.scss";
 
 * {
@@ -90,7 +91,7 @@ $Oswald: "Oswald-VariableFont";
         border-top: solid 1px var(--siderMenuBorder);
 
         // menu
-        .ant-menu-sub>.ant-menu-item {
+        .ant-menu-sub > .ant-menu-item {
           padding-left: 56px !important;
           margin: 0px !important;
           height: 30px !important;
@@ -110,14 +111,13 @@ $Oswald: "Oswald-VariableFont";
           color: var(--siderMenuColor);
         }
 
-        .ant-menu-sub>.ant-menu-item {
+        .ant-menu-sub > .ant-menu-item {
           background-color: var(--siderSubMenuBg) !important;
         }
 
         .ant-menu-submenu-title:hover,
-        .ant-menu-submenu>li:hover,
+        .ant-menu-submenu > li:hover,
         .ant-menu-item:hover {
-
           .ant-menu-item-selected a,
           a {
             color: red;
@@ -127,7 +127,7 @@ $Oswald: "Oswald-VariableFont";
           color: var(--siderColorHover);
         }
 
-        .ant-menu-sub>.ant-menu-item-selected,
+        .ant-menu-sub > .ant-menu-item-selected,
         .ant-menu-item-selected a,
         .ant-menu-item-selected svg,
         .ant-menu-submenu-open .ant-menu-item-selected svg,
@@ -140,7 +140,7 @@ $Oswald: "Oswald-VariableFont";
 
         .ant-menu-item,
         .ant-menu-submenu-title,
-        .ant-menu-submenu>li {
+        .ant-menu-submenu > li {
           border-radius: 0px !important;
         }
 
@@ -150,10 +150,9 @@ $Oswald: "Oswald-VariableFont";
   }
 
   .ant-layout-content {
-    margin: 15px;
-    width: calc(100% - 30px);
     overflow: hidden;
     overflow-y: auto;
+
   }
 }
 
@@ -188,4 +187,3 @@ $Oswald: "Oswald-VariableFont";
   background: #4ec6f7;
   cursor: pointer !important;
 }
-

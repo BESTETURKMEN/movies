@@ -1,0 +1,194 @@
+@font-face {
+  font-family: "Montserrat-Italic";
+  src: url("/public/assets/font/Montserrat/Montserrat-Italic.ttf");
+}
+$Montserrat-Italic: "Montserrat-Italic";
+
+.cards {
+  .ant-card {
+    margin: 10px;
+    .ant-card-body {
+      .ant-card-meta-detail {
+        .ant-card-meta-title {
+          .movie-title {
+            background-color: red;
+            width: 300px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .card-img {
+    width: 100%;
+    height: 250px;
+  }
+}
+.ant-list-items {
+  .ant-list-item {
+    height: 150px;
+  }
+}
+
+.ant-card-body {
+  .ant-card-meta-detail {
+    margin-top: -45px;
+  }
+}
+.card-progress {
+  width: 30px;
+  height: 30px;
+  margin-top: -20px;
+  margin-left: 20px;
+}
+.content {
+  width: 100%;
+  background-color: white;
+
+  .img {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+  }
+
+  .ant-card-body {
+    margin-top: 35px;
+  }
+  .button {
+    .ant-btn {
+      width: 990px;
+      height: 70px;
+      margin-top: 30px;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+    }
+  }
+  .collapse {
+    width: 250px;
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
+  .main-title {
+    margin-left: 30px;
+    font-size: 26px;
+    margin-top: 20px;
+  }
+  .ant-btn {
+    margin-top: 30px;
+    width: 250px;
+    margin-left: 30px;
+    border-radius: 9999px;
+  }
+  .search-button {
+    .search-button-area {
+      .ant-btn {
+        border-radius: 9999px;
+        background-color: white;
+      }
+      .search {
+        .ant-input {
+          width: 100px;
+          height: 50px;
+          background-color: red;
+        }
+      }
+    }
+  }
+}
+////detailPage
+.detail-page-all {
+  width: 100%;
+  position: relative;
+  .detail-Page {
+    position: absolute;
+    border-bottom: 1px solid var(--primaryColor);
+    background-position: left calc((50vw - 170px) - 340px) top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 510px;
+  }
+
+  .detail-poster {
+    height: 510px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      rgba(10.5, 31.5, 52.5, 1) calc((50vw - 170px) - 340px),
+      rgba(10.5, 31.5, 52.5, 0.84) 50%,
+      rgba(10.5, 31.5, 52.5, 0.84) 100%
+    );
+  }
+  .slider_content {
+    display: flex;
+    .detail-card {
+      .ant-card {
+        width: 300px;
+        height: 440px;
+        margin-left: 200px;
+        margin-top: 30px;
+        border-radius: 3%;
+
+        .ant-card-cover {
+          .card-img {
+            width: 300px;
+            height: 450px;
+            border-radius: 3%;
+          }
+        }
+      }
+    }
+    .detail_text {
+      width: fit-content;
+      color: white;
+      margin-left: 30px;
+      margin-top: 25px;
+      .detail-title {
+        position: relative;
+        font-size: 34px;
+      }
+      .detail-rate-area {
+        height: 200px;
+
+        .detail-progress {
+          width: 70px;
+          height: 90px;
+          margin-top: 50px;
+        }
+        .ant-btn {
+          height: 40px;
+          background-color: rgb(39, 43, 68);
+          color: white;
+          font-size: 18px;
+          margin-left: 220px;
+          margin-top: -80px;
+          border-radius: 9999px;
+        }
+        .title {
+          margin-left: 90px;
+          height: 30px;
+          width: 20px;
+          color: white;
+          font-size: 20px;
+          margin-top: -80px;
+          position: relative;
+        }
+      }
+      .detail-tagline {
+        width: 300px;
+        height: 20px;
+        font-family: $Montserrat-Italic !important;
+        position: relative;
+      }
+      .detail-overview {
+        position: relative;
+      }
+    }
+  }
+}
