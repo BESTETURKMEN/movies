@@ -1,21 +1,20 @@
-/* eslint-disable max-len */
 import axios from "axios";
 
-export const getSearchMovies = async () => {
+export const getTrendingPeopleList = async () => {
   try {
     const response = await axios.request({
       method: "get",
-      url: "https://api.themoviedb.org/3/search/movie?query=movie&include_adult=false&language=en-US&page=1",
+      url: "https://api.themoviedb.org/3/person/popular?language=en-US&page=1",
       headers: {
         Accept: "application/json",
-        // eslint-disable-next-line prettier/prettier, max-len
         Authorization:
+          // eslint-disable-next-line max-len, max-len
           "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNDBhYzdlM2ZlNGIxYzExOTg1MjQ2ZDMzZTM5YjVjZCIsInN1YiI6IjY2MmEwZDM4OGE4OGIyMDExY2UzZmE4MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.k5Ys8_63Kn49H_OL2qVuUpz4PPqr-fzCi3z-bm2jvX4",
       },
     });
     return response.data;
   } catch (error) {
     console.error(error);
-    throw new Error("Error fetching popular categories");
+    throw new Error("Error fetching people list");
   }
 };

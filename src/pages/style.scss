@@ -103,6 +103,7 @@ $Montserrat-Italic: "Montserrat-Italic";
 .detail-page-all {
   width: 100%;
   position: relative;
+
   .detail-Page {
     position: absolute;
     border-bottom: 1px solid var(--primaryColor);
@@ -127,6 +128,9 @@ $Montserrat-Italic: "Montserrat-Italic";
   }
   .slider_content {
     display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    height: 510px;
     .detail-card {
       .ant-card {
         width: 300px;
@@ -188,6 +192,127 @@ $Montserrat-Italic: "Montserrat-Italic";
       }
       .detail-overview {
         position: relative;
+      }
+      .heart {
+        margin-top: 65px;
+        margin-left: 20px;
+      }
+    }
+  }
+  .content {
+    .divider {
+      margin-left: 310px;
+      width: 990px;
+    }
+    .content-segmented {
+      .content-cards {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+        margin-left: 300px;
+        .ant-card {
+          margin: 20px;
+        }
+      }
+      .content-title {
+        width: 300px;
+        height: 50px;
+        margin-top: 70px;
+        margin-left: 315px;
+        padding-top: 10px;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .detail-img {
+        width: 130px;
+        height: 160px;
+      }
+    }
+    .content-segmented-1 {
+      height: 550px;
+      width: 980px;
+      margin-left: 320px;
+    }
+    .content-segmented-2 {
+      height: 300px;
+      width: 600px;
+      margin-left: 320px;
+    }
+    .content-segmented-2-img {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      margin-top: 15px;
+    }
+    .content-segmented-3 {
+      margin-left: 320px;
+      .content-segmented-title-3 {
+        font-weight: normal;
+        font-size: 22px;
+      }
+      .content-segmented-3-cards {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        margin-top: 15px;
+        .ant-card {
+          margin: 10px;
+        }
+      }
+    }
+  }
+  .slider {
+    margin-top: 150px;
+    width: 300px;
+    .slider-icon {
+      margin-left: -100px;
+      width: 100px;
+      height: 20px;
+      display: flex;
+    }
+    .slider-title {
+      margin-top: 35px;
+      margin-left: -100px;
+      .slider-1 {
+        margin-top: 20px;
+        .slider-1-1 {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .slider-1-2 {
+          margin-top: 5px;
+        }
+      }
+      .slider-2 {
+        margin-top: 20px;
+        .slider-2-1 {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .slider-2-2 {
+          margin-top: 5px;
+        }
+      }
+      .slider-3 {
+        margin-top: 20px;
+        .slider-3-1 {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .slider-3-2 {
+          margin-top: 5px;
+        }
+      }
+      .slider-4 {
+        margin-top: 20px;
+        .slider-4-1 {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .slider-4-2 {
+          margin-top: 5px;
+        }
       }
     }
   }

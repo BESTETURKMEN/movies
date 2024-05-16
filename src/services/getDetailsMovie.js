@@ -4,12 +4,12 @@ export const getDetailsMovie = async (movie_id) => {
   try {
     const response = await axios.request({
       method: "get",
-      url: `https://api.themoviedb.org/3/movie/${movie_id}`,
+      url: `https://api.themoviedb.org/3/movie/${movie_id}?language=en-US`,
       headers: {
         Accept: "application/json",
         Authorization:
           // eslint-disable-next-line max-len, max-len
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NTgzYWVlNjFlMWZjNTdhZDUzMTIxYzdhNTIyNjAxYSIsInN1YiI6IjY2MmEwZDM4OGE4OGIyMDExY2UzZmE4MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2CUTn2iD0PWDdGqMz7eazEiharn5NQZnYR8EXA6Ibgo",
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNDBhYzdlM2ZlNGIxYzExOTg1MjQ2ZDMzZTM5YjVjZCIsInN1YiI6IjY2MmEwZDM4OGE4OGIyMDExY2UzZmE4MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.k5Ys8_63Kn49H_OL2qVuUpz4PPqr-fzCi3z-bm2jvX4",
       },
     });
     return response.data;
